@@ -1,0 +1,12 @@
+mov al, 1
+movabs rax, 0x1010101010101010
+ret
+mov al, 1
+movabs rax, 0x1010101010101010
+ret
+mov al, 1
+movabs rax, 0x1010101010101010
+ret
+mov al, 1
+movabs rax, 0x1010101010101010
+ret
