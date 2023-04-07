@@ -96,13 +96,26 @@ class Assembler:
         line_num += instr_count
   
   def get_instruction_list(self):
-    return [
-      x
-      for line in self.compiled
-      if self.is_code(line)
-      for x in line.split()[1:]
-      if self.is_byte(x)
-    ]
+    instruction_list = []
+    for line in self.compiled:
+      if self.is_code(line):
+        raw = line.split()
+        raw.pop(0);
+        
+        stop = False
+        def valid(x):
+          nonlocal stop
+          if stop:
+            return False
+        
+          if self.is_byte(x):
+            return True
+          
+          stop = True
+          return False
+        
+        instruction_list.extend([x for x in raw if valid(x)])
+    return instruction_list
   
   def print_raw_bytes(self):
     instruction_list = self.get_instruction_list()

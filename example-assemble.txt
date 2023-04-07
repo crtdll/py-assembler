@@ -10,3 +10,8 @@ ret
 mov al, 1
 movabs rax, 0x1010101010101010
 ret
+jmp test
+ret
+test:
+mov al, 3
+ret
