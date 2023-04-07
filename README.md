@@ -7,7 +7,7 @@ To use py-assembler, you need to open a terminal and run the script with the app
 ### Assemble
 To assemble instructions, here is an example use of the command:
 
-```css
+```bash
 py main.py -a x64 -t assemble -c "mov al, 1; ret"
 or
 py main.py -a x64 -t assemble -f "path/to/file"
@@ -22,7 +22,7 @@ You can provide the instructions either as a string using `-c/--code`, or as a f
 ### Disassemble
 To disassemble instructions, here is an example use of the command:
 
-```css
+```bash
 py main.py -a x64 -t disassemble -c "b0 01 c3"
 or
 py main.py -a x64 -t disassemble -f "path/to/file"
